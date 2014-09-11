@@ -15,4 +15,8 @@ class PostService extends PolymerElement {
         .map((s) => new Post.fromJson(s)).toList());
     return posts;
   }
+  setFavorite(uid, isFavorite) {
+    // no service backend, just log the change
+    print('Favorite changed: ${uid}, now: ${isFavorite}');
+  }
 }

@@ -24,7 +24,7 @@ class PostList extends PolymerElement {
     like update a database.
   */
   handleFavorite(event, detail, sender) {
-    templateBind(sender).templateInstance.model['post'];
-    $['service'].setFavorite(1, true);
+    var post = nodeBind(sender).templateInstance.model['post'];
+    $['service'].setFavorite(post.uid, post.favorite);
   }
 }
