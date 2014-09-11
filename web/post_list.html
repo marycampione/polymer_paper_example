@@ -1,0 +1,40 @@
+﻿<link rel="import" href="packages/polymer/polymer.html">
+<link rel="import" href="packages/polymer_example/post_service.html">
+<link rel="import" href="post_card.html">
+
+<polymer-element name="post-list" attributes="show">
+  <template>
+    <style>
+    :host {
+      display: block;
+      width: 100%;
+    }
+    post-card {
+      margin-bottom: 30px;
+    }
+    </style>
+
+    <post-service id="service" posts="{{myPosts}}"></post-service>
+
+    <div layout vertical center>
+      <template repeat="{{post in myPosts}}">
+
+        <post-card
+          favorite="{{post.favorite}}"
+          on-favorite-tap="{{handleFavorite}}"
+          hidden?="{{show == 'favorites' && !post.favorite}}">
+          <img _src="{{post.avatar}}" width="70" height="70">
+          <h2>{{post.username}}</h2>
+          <p>{{post.text}}</p>
+        </post-card>
+
+      </template>
+    </div>
+
+  </template>
+
+  <script type="application/dart"
+          src="post_list.dart">
+  </script>
+
+</polymer-element>

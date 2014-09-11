@@ -1,0 +1,10 @@
+name: polymer_example
+description: A sample Polymer application
+dependencies:
+  core_elements: '>=0.2.0 <0.3.0'
+  paper_elements: '>=0.1.0 <0.2.0'
+  polymer: '>=0.13.0 <0.14.0'
+  template_binding: '>=0.12.1 <0.13.0'
+transformers:
+- polymer:
+    entry_points: web/index.html
